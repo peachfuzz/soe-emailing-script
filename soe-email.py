@@ -14,9 +14,9 @@ files = os.listdir(path)                    #gets all files in current directory
 
 
 loadmess = "This is an important message. Please take a look at the file. If there are any errors, please reply back."
-fromaddr = "dominguezmah@spu.edu"
+fromaddr = "your email"
 #region, my pasword
-password = "your password goes here"
+password = "your email password goes here"
 #endregion
 
 #headless browser
