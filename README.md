@@ -9,4 +9,6 @@ Note: The <username>, <date the file was changed>, and <file contents> must be s
 
 For example, a person places the script in documents/email-files. In that directory, there are the following files: bob_1-2-19_file, bill_1-3-19, betty_1-1-19_file. The script will send bob_1-2-19_file to bob@spu.edu with the subject "file 1-2-19" and the master message. This happens for all the files within the directory.
 
+Double click to run will be enabled soon. 
+
 Any questions, please direct them to Hector. 
