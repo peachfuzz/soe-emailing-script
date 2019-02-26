@@ -15,12 +15,15 @@ example = """
 """
 #this is where you will need to add your message, including your signature
 loadmess = """
-enter the HTML from wordtohtml.net here
+To whom it may concern,<br/>
+This is important and I need you to see it<br/>
+best,<br/>
+Hector
            """
 loadmess = loadmess
-fromaddr = "enter your SPU email here"
+fromaddr = "Enter your SPU email here"
 #region, my pasword
-password = "enter your password here"
+password = "Enter your SPU password here"
 #endregion
 
 path = '.'                                  #current directory
@@ -30,18 +33,19 @@ server = smtplib.SMTP('smtp.outlook.com', 587)
 server.ehlo()
 server.starttls()
 server.ehlo()
-server.login(fromaddr, password)
+server.login(fromaddr, password)            #login
 
 for path in files:                          #for each file, format of name should be localpart_filedate_loadsheet
-    if ".xlsx" in path:                     #only sending excel files
-        localp = path.split('_')[0]             #localpart
-        filedate = path.split('_')[1]           #filedate
+    if ".xlsx" in path:                         #only sending excel files
+        localp = path.split('_')[0]             #email, local part
+        filedate = path.split('_')[1]           #date data was retrieved
+        filecontents = path.split('.')[0]       #contents of file
         toaddr = localp + "@spu.edu"
         print("attempting to send email to " + str(toaddr))
         msg = MIMEMultipart()
         msg['From'] = fromaddr
         msg['To'] = toaddr
-        msg['Subject'] = "Load sheet " + filedate
+        msg['Subject'] = filecontents + " " + filedate
 
         html = """\
         <html>
